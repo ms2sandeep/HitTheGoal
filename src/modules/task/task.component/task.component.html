@@ -1,0 +1,12 @@
+<header [title]="'Tasks'"></header>
+<ion-content class="card-background-page" padding>
+  <div>
+    <button (click)="refreshTasks()"> Load Again </button>
+  </div>
+  <ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.$value}}
+    </li>
+  </ul>
+  <task-with-info [tasksWithInfo]="(tasksWithInfo | async)"></task-with-info>
+</ion-content>

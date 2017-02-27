@@ -1,0 +1,12 @@
+<div class="task-with-info-container" *ngFor="let taskWithInfo of tasksWithInfo">
+    <div *ngIf="taskWithInfo.hasChildren()">
+        <div (click)="showChildTasks(taskWithInfo.tasks)">
+            <task-tile [task]="taskWithInfo.task"></task-tile>
+        </div>
+    </div>
+    <div *ngIf="!taskWithInfo.hasChildren()">
+        <div (click)="showTaskInfo(taskWithInfo.taskInfo)">
+            <task-tile [task]="taskWithInfo.task"></task-tile>
+        </div>
+    </div>
+</div>

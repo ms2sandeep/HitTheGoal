@@ -1,0 +1,15 @@
+<header [title]="'Goals'"></header>
+<ion-content class="card-background-page" padding>
+    <div>
+        <button (click)="refreshTasks()"> Load Again </button>
+    </div>
+    <div *ngFor="let goal of (goals | async)">
+        <!--<div (click)="showChildTasks(goal)">-->
+            <ion-card>
+                <div class="card-title">{{goal.title}}</div>
+                <div class="card-subtitle">{{goal.description}}</div>
+                <div class="card-subtitle">{{goal.deadline}}</div>
+            </ion-card>
+        <!--</div>-->
+    </div>
+</ion-content>
